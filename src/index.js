@@ -26,6 +26,8 @@ const feedbackReducer = (state = [feedback], action) => {
             return {...state, feeling: action.payload}
         case "UNDERSTAND":
             return {...state, understand: action.payload}
+        case "SUPPORT":
+            return {...state, support: action.payload}
     }
     return state;
 }
