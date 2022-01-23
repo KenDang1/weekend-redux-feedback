@@ -10,8 +10,15 @@ function Review () {
     // TODO: submit the info to database
     // axios needed
     const onHandleSubmit = () => {
-        
-    }
+        // method is POST, url is /feedback, data is feedback
+        axios.post('/feedback', feedback)
+            .then(res => {
+                console.log('POST /feedback res is', res);
+            })
+            .catch(err => {
+                console.error('POST /feedback failed', err)
+            })
+    };
 
     return (
         <>
