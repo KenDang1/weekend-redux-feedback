@@ -8,10 +8,29 @@ import { createStore, combineReducers, applyMiddleware } from "redux";
 import logger from 'redux-logger';
 
 
+// an object that contain properties of those inputs
+// "feeling", "understand", "support", "comments"
+// instead of living local in their form, they can go here
+const feedback = {
+    feeling: '',
+    understand: '',
+    support: '',
+    comments: '',
+}
+
+// initial state would be the feedback, and depend on the action
+// it will add the value of those input into the property
+const feedbackReducer = (state = [feedback], action) => {
+    switch (action.type) {
+        case "FEELING":
+            return {...state, feeling: action.payload}
+    }
+    return state;
+}
 
 const store = createStore(
     combineReducers({
-
+        feedbackReducer
     }),
     applyMiddleware(logger),
 ); // end of store
