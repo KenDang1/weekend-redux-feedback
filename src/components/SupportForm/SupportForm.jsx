@@ -23,7 +23,7 @@ function SupportFrom () {
             payload: input
         })
         // this is to go to the next page
-        // which is UnderstandForm
+        // which is CommentsForm
         history.push('/comments');
         // this is to clear the input
         setInput('');
