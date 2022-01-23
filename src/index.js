@@ -9,11 +9,11 @@ import logger from 'redux-logger';
 
 
 // an object that contain properties of those inputs
-// "feeling", "understand", "support", "comments"
+// "feeling", "understanding", "support", "comments"
 // instead of living local in their form, they can go here
 const feedback = {
     feeling: '',
-    understand: '',
+    understanding: '',
     support: '',
     comments: '',
 }
@@ -25,7 +25,7 @@ const feedbackReducer = (state = [feedback], action) => {
         case "FEELING":
             return {...state, feeling: action.payload}
         case "UNDERSTAND":
-            return {...state, understand: action.payload}
+            return {...state, understanding: action.payload}
         case "SUPPORT":
             return {...state, support: action.payload}
         case "COMMENTS":

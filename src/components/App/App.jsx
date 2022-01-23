@@ -9,6 +9,7 @@ import SupportForm from '../SupportForm/SupportForm.jsx';
 import CommentsForm from '../CommentsForm/CommentsForm.jsx';
 import Review from '../Review/Review.jsx';
 
+
 function App() {
 
   return (
@@ -18,7 +19,7 @@ function App() {
         <Header />
 
         <Route path='/' exact>
-        <FeelingForm />
+          <FeelingForm />
         </Route>
 
         {/**  route to go to this form is '/understand' */}
@@ -28,19 +29,23 @@ function App() {
 
         {/**  route to go to this form is '/support' */}
         <Route path='/support' exact>
-        <SupportForm />
+          <SupportForm />
         </Route>
 
         {/**  route to go to this form is '/comments' */}
         <Route path='/comments' exact>
-        <CommentsForm />
+          <CommentsForm />
         </Route>
 
         {/**  route to go to this page is '/review' */}
         <Route path='/review' exact>
-        <Review />
+          <Review />
         </Route>
 
+        {/**  route to go to this page is '/admin' */}
+        <Route path='/admin' exact>
+          <Admin />
+        </Route>
       </Router>
     </div>
   );
