@@ -8,7 +8,7 @@ import UnderstandingForm from '../UnderstandingForm/UnderstandForm.jsx';
 import SupportForm from '../SupportForm/SupportForm.jsx';
 import CommentsForm from '../CommentsForm/CommentsForm.jsx';
 import Review from '../Review/Review.jsx';
-
+import Admin from '../Admin/Admin.jsx'
 
 function App() {
 
@@ -24,7 +24,7 @@ function App() {
 
         {/**  route to go to this form is '/understand' */}
         <Route path='/understand' exact>
-        <UnderstandingForm />
+          <UnderstandingForm />
         </Route>
 
         {/**  route to go to this form is '/support' */}
