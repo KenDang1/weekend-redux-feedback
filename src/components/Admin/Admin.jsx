@@ -23,8 +23,18 @@ function Admin () {
         })
     };
 
-    const onDelete = () => {
+    // failing because I'm sending the wrong data property
+    const onDelete = (id) => {
         console.log('onDelete', onDelete);
+        // id is not define ??????
+        axios.delete(`/feedback/${id}`, {feedback: id})
+            .then(res => {
+                console.log('delete /feedback', res);
+                fetchFeedback();
+            })
+            .catch(err => {
+                console.error('Failed to delete /feedback', err);
+            })
     }
 
     return (
