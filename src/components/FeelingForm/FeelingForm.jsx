@@ -10,10 +10,10 @@ function FeelingFrom () {
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        // Keeping the answer between 1-5
-        // if either input over 5 over under 1
+        // Keeping the answer between 1-6
+        // if either input over 6 over under 1
         // then stop this function
-        if (input > 5 || input < 1){
+        if (input > 6 || input < 1) {
             return;
         }
 
