@@ -4,16 +4,19 @@ const pool = require('../modules/pool');
 
 
 
-// POST '/'
+// TODO: POST '/'
 router.post('/', (req, res) => {
     const newFeedback = req.body
 
+    // syntax to insert info into table "feedback"
+    // there are 4 columns that the info will go into
     const queryText = `
         INSERT INTO "feedback"
             ("feeling", "understanding", "support", "comments")
         VALUES ($1, $2, $3, $4);
     `;
 
+    // these are the fours data
     const queryParams = [
         newFeedback.feeling,
         newFeedback.understanding,
@@ -33,7 +36,7 @@ router.post('/', (req, res) => {
 
 
 
-// GET '/'
+// TODO: GET '/'
 router.get('/', (req, res) => {
     // selct everything from table feedback
     let queryText = `
