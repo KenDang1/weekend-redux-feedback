@@ -18,12 +18,14 @@ const feedback = {
     comments: '',
 }
 
-// initial state would be the feedback, and depend on the action
+// initial state would be the feedback, and depend on the action.type
 // it will add the value of those input into the property
 const feedbackReducer = (state = [feedback], action) => {
     switch (action.type) {
         case "FEELING":
             return {...state, feeling: action.payload}
+        case "UNDERSTAND":
+            return {...state, understand: action.payload}
     }
     return state;
 }
