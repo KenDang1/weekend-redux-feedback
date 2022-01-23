@@ -23,17 +23,36 @@ function Admin () {
         })
     };
 
+    const onDelete = () => {
+        console.log('onDelete', onDelete);
+    }
+
     return (
         <>
         <h2>Feedback from database</h2>
-        {feedback.map((feedback) => (
-            <p key={feedback.id}> 
-                {feedback.feeling} 
-                {feedback.understanding} 
-                {feedback.support} 
-                {feedback.comments} 
-            </p>
-        ))}
+        <table>
+            <thead>
+                <tr>
+                    <th>Feeling</th>
+                    <th>Understanding</th>
+                    <th>Support</th>
+                    <th>Comments</th>
+                </tr>
+            </thead>
+            <tbody>
+                {feedback.map((feedback) => (
+                    <tr key={feedback.id}>
+                        <td>{feedback.feeling}</td>
+                        <td>{feedback.understanding}</td>
+                        <td>{feedback.support}</td>
+                        <td>{feedback.comments}</td>
+                        <td>
+                            <button onClick={onDelete}>DELETE</button>
+                        </td>
+                    </tr>
+                ))}
+            </tbody>
+        </table>
         </>
     )
 }; // end of Admin
