@@ -27,7 +27,7 @@ function Admin () {
         <>
         <h2>Feedback from database</h2>
         {feedback.map((feedback) => (
-            <p key={id}> 
+            <p key={feedback.id}> 
                 {feedback.feeling} 
                 {feedback.understanding} 
                 {feedback.support} 
