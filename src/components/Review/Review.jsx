@@ -11,7 +11,7 @@ function Review () {
     // axios needed
     const onHandleSubmit = () => {
         // method is POST, url is /feedback, data is feedback
-        axios.post('/feedback', feedback)
+        axios.post('/feedback', {feedback})
             .then(res => {
                 console.log('POST /feedback res is', res);
             })
@@ -25,7 +25,7 @@ function Review () {
             <h1>Review Your Feedback</h1>
         {/** Here it should have all the previous 4 values */}
         <p>Feeling: {feedback.feeling}</p>
-        <p>Understand: {feedback.understand}</p>
+        <p>Understanding: {feedback.understanding}</p>
         <p>Support: {feedback.support}</p>
         <p>comments: {feedback.comments}</p>
         <br />
