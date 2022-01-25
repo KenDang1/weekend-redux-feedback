@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 function CommentsFrom () {
     const [input, setInput] = useState('');
@@ -10,24 +11,32 @@ function CommentsFrom () {
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        // Keeping the answer between 1-6
-        // if either input over 6 over under 1
-        // then stop this function
-        if (input > 6 || input < 1) {
-            return;
-        }
-
-        // connect to reducer in index
-        dispatch({
-            type: "COMMENTS",
-            payload: input
+        // Sweetalert2 for some warning
+        Swal.fire({
+            title: `Are you sure, you don't want to leave any comments?`,
+            showDenyButton: true,
+            showCancelButton: true,
+            confirmButtonText: 'Save',
+            denyButtonText: `Don't save`,
+        }).then((result) => {
+            /* Read more about isConfirmed, isDenied below */
+            if (result.isConfirmed) {
+                // connect to reducer in index
+                dispatch({
+                    type: "COMMENTS",
+                    payload: input
+                })
+                // this is to go to the next page
+                // which is Review
+                history.push('/review');
+                // this is to clear the input
+                setInput('');
+            // Swal.fire('Saved!', '', 'success')
+            } else if (result.isDenied) {
+            Swal.fire('Changes are not saved', '', 'info')
+            }
         })
-        // this is to go to the next page
-        // which is Review
-        history.push('/review');
-        // this is to clear the input
-        setInput('');
-    }
+    }; // end if handleSubmit
 
     
     return (
