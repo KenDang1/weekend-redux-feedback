@@ -14,6 +14,8 @@ function Review () {
         axios.post('/feedback', {feedback})
             .then(res => {
                 console.log('POST /feedback res is', res);
+                // Send to thankyou page
+                history.push('/thankyou')
             })
             .catch(err => {
                 console.error('POST /feedback failed', err)

@@ -13,7 +13,12 @@ function UnderstandingFrom () {
         // Keeping the answer between 1-6
         // if either input over 6 over under 1
         // then stop this function
-        if (input > 6 || input < 1) {
+        if (input === '') {
+            alert('Please put in your answer!')
+            return;
+        }
+        else if (input > 6 || input < 1) {
+            alert("Answer need to be between 1 - 6 !!")
             return;
         }
 
@@ -34,6 +39,7 @@ function UnderstandingFrom () {
         <>
             <div>
                 <h1> How well are you understanding the content?</h1>
+                <h3>Answer between 1 - 6.</h3>
                 <form>
                     <input 
                     required

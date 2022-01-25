@@ -27,7 +27,7 @@ function Admin () {
     const onDelete = (id) => {
         console.log('onDelete', onDelete);
         // id is not define ??????
-        axios.delete(`/feedback/${id}`, {feedback: id})
+        axios.delete(`/feedback/${id}`)
             .then(res => {
                 console.log('delete /feedback', res);
                 fetchFeedback();
@@ -57,7 +57,7 @@ function Admin () {
                         <td>{feedback.support}</td>
                         <td>{feedback.comments}</td>
                         <td>
-                            <button onClick={onDelete}>DELETE</button>
+                            <button onClick={() => onDelete(feedback.id)}>DELETE</button>
                         </td>
                     </tr>
                 ))}
